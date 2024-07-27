@@ -3,6 +3,9 @@ from wordcloud import WordCloud
 import pandas as pd
 from collections import Counter
 import emoji
+from urlextract import URLExtract
+
+
 def fetch_stats(selected_user,df):
 
     if selected_user != 'Overall':
@@ -20,7 +23,6 @@ def fetch_stats(selected_user,df):
 
     # fetch links shared in chat , first install the library from terminal
     # pip install urlextract
-    from urlextract import URLExtract
     extract = URLExtract()
     links = []
     for message in df['message']:
